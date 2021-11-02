@@ -3,12 +3,11 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  useLocation,
 } from 'react-router-dom'
 import React, { useState } from 'react'
-import './Styles/global.scss'
 
 // 頁面用元件
+import Login from './pages/Login'
 import Home from './pages/Home/Home'
 import AdoptList from './pages/AdoptList'
 import ProductList from './pages/ProductList'
@@ -21,6 +20,15 @@ import Login from './pages/login/Login'
 import Member from './pages/member/Member'
 import NotFoundPage from './pages/NotFoundPage'
 
+import Done from './pages/Done'
+import EmptyCart from './pages/EmptyCart'
+import MyOrder from './pages/MyOrder'
+import FailPage from './pages/FailPage'
+import OrderDetail from './pages/OrderDetail'
+import ShopList from './pages/ShopList'
+import ShoppingCart from './pages/ShoppingCart'
+import ConfirmPage from './pages/ConfirmPage'
+
 // 組合用元件
 import MyNavbar from './components/MyNavbar'
 import MyFooter from './components/MyFooter'
@@ -30,7 +38,7 @@ import ScrollToTop from './components/ScrollToTop'
 //import BreadCrumb from './components/BreadCrumb'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 
-function App(props) {
+function App() {
   const [auth, setAuth] = useState(false)
 
   //Sharon註冊功能--------------------------------------
@@ -74,6 +82,37 @@ function App(props) {
           <ScrollToTop>
             <AuthHeader setAuth={setAuth} />
             <Switch>
+              <Route path="/done">
+                <Done />
+              </Route>
+              <Route path="/EmptyCart">
+                <EmptyCart />
+              </Route>
+              <Route path="/MyOrder">
+                <MyOrder />
+              </Route>
+              <Route path="/login">
+                {/* 利用props傳入頁面元件狀態 */}
+                <Login auth={auth} setAuth={setAuth} />
+              </Route>
+              <Route path="/FailPage">
+                <FailPage auth={auth} />
+              </Route>
+              <Route path="/OrderDetail">
+                <OrderDetail />
+              </Route>
+              <Route path="/ShopList">
+                <ShopList />
+              </Route>
+              <Route path="/ShoppingCart">
+                <ShoppingCart />
+              </Route>
+              <Route path="/ConfirmPage">
+                <ConfirmPage />
+              </Route>
+              <Route path="*">
+                <NotFoundPage />
+              </Route>
               <Route path="/bloglist">
                 <BlogList />
               </Route>
@@ -86,6 +125,9 @@ function App(props) {
               <Route path="/productlist">
                 <ProductList />
               </Route>
+              {/* <Route path="/cart">
+                <Cart />
+              </Route> */}
               <Route path="/hotellist">
                 <HotelList auth={auth} />
               </Route>
@@ -132,14 +174,6 @@ function App(props) {
                 {/* 利用props傳入頁面元件狀態 */}
                 <Login auth={auth} setAuth={setAuth} />
               </Route>
-              <Route path="*">
-                <NotFoundPage />
-              </Route>
-
-              {/* 這裡要定義網址參數的屬性名稱 */}
-              {/* <Route path="/product/baby/:id?">
-                <ProductBaby />
-              </Route> */}
             </Switch>
             {/* end 匹配路由表 */}
           </ScrollToTop>
