@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import '../EmptyCart.css'
+import '../Styles/EmptyCart.css'
 
 function EmptyCart(props) {
   return (
