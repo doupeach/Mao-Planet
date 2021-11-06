@@ -4,7 +4,6 @@ import ProductListTitle from './ProductListTitle'
 import ProductCard from './ProductCard'
 import ChangePageButton from './ChangePageButton'
 import '../Styles/ProductList.scss'
-import BlogSection from './BlogSection'
 import ProductDetails from './ProductDetails'
 
 const ProductList = (tag)=>{
