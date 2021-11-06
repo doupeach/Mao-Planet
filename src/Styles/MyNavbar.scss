@@ -13,6 +13,9 @@
   top: 0;
   width: 100%;
   background: #fff;
+  a:hover, a:focus, a:active, a:visited {
+    background-color: transparent;
+  }
 }
 
 .ACnavtext {
