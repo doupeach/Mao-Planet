@@ -25,9 +25,7 @@ function FailPage(props) {
         <div className="mt-3">
           <div className="col-mb-12">
             <div className="card">
-              <div className="card-header text-center">
-                訂單失敗
-              </div>
+              <div className="card-header text-center">訂單失敗</div>
               <div className="card-body mx-auto">
                 <ul className="text-center list-unstyled">
                   <li>
@@ -44,10 +42,7 @@ function FailPage(props) {
                 </ul>
               </div>
               <div className="text-center row">
-                <a
-                  href="/"
-                  className="btn mx-auto mb-4 BackToCart"
-                >
+                <a href="/" className="btn mx-auto mb-4 BackToCart">
                   返回購物車
                 </a>
               </div>
@@ -59,26 +54,20 @@ function FailPage(props) {
       <footer className="bg-light text-muted py-5">
         <div className="container">
           <ul className="list-inline text-center">
-            <li className="list-inline-item">
-              {' '}
-              © Copright 2021 Mao Planet
-            </li>
+            <li className="list-inline-item"> © Copright 2021 Mao Planet</li>
             <li classNameName="list-inline-item">
               <a href="/" className="text-info">
-                <i classNameName="fab fa-facebook-f"></i>{' '}
-                Facebook
+                <i classNameName="fab fa-facebook-f"></i> Facebook
               </a>
             </li>
             <li classNameName="list-inline-item">
               <a href="/" className="text-info">
-                <i classNameName="fab fa-instagram"></i>{' '}
-                instagram
+                <i classNameName="fab fa-instagram"></i> instagram
               </a>
             </li>
             <li classNameName="list-inline-item">
               <a href="/" className="text-info">
-                <i classNameName="fas fa-user-tag"></i>{' '}
-                About
+                <i classNameName="fas fa-user-tag"></i> About
               </a>
             </li>
           </ul>

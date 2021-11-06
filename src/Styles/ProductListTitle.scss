@@ -1,11 +1,11 @@
-.title-container {
+.AG-title-container {
   display: flex;
   justify-content: center;
   margin: 5% auto 4%;
   width: 80%;
 }
 
-.productListTitle {
+.AG-productListTitle {
   margin: 0 10%;
   font-size: 1.5rem;
   color: #646464;
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 768px) {
-  .productListTitle {
+  .AG-productListTitle {
     margin: 0 2%;
   }
 }
