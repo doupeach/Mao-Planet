@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 // import MyFooter from '../../components/MyFooter'
+import ReadingProgress from '../../components/ReadingProgress'
 
 import ArticlePic1 from '../../images/BlogArticle/ArticlePic1_805x500.jpg'
 import ArticlePic2 from '../../images/BlogArticle/ArticlePic2_805x500.jpg'
@@ -15,9 +16,13 @@ import './BlogArticle.scss'
 
 function BlogArticle1(props) {
   //   const { auth } = props
+  const target = React.createRef()
 
   return (
     <>
+      <ReadingProgress target={target} />
+      <div className={`post`} ref={target}></div>
+
       <Container id="ACblogContent" className="d-flex justify-content-center">
         <Row>
           <div className="ACblogArticle-container col-md-11 col-12">

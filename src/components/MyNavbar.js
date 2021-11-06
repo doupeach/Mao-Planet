@@ -11,7 +11,7 @@ function MyNavbar(props) {
   // const { auth } = props
   return (
     <>
-      <div className="ACtopYellow">{/* <p></p> */}</div>
+      <div className="ACtopYellow"></div>
 
       <Navbar
         collapseOnSelect
