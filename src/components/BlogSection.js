@@ -3,8 +3,8 @@ import { Container, Row, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FaPaw } from 'react-icons/fa'
 import MobileBlogSection from './MobileBlogSection'
-import BlogPic1 from '../images/BlogPic1_150x150.jpg'
-import BlogPic2 from '../images/BlogPic2_150x150.jpg'
+import BlogPic1 from '../images/Home/BlogPic1_150x150.jpg'
+import BlogPic2 from '../images/Home/BlogPic2_150x150.jpg'
 import '../Styles/BlogSection.scss'
 
 function BlogSection(props) {

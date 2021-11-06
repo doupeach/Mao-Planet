@@ -16,22 +16,14 @@ function EmptyCart(props) {
             <div className="card">
               <div className="card-body">
                 <ul className="text-center list-unstyled mt-3">
-                  <li className="empty_notice">
-                    您的購物車沒有任何商品......
-                  </li>
+                  <li className="empty_notice">您的購物車沒有任何商品......</li>
                 </ul>
               </div>
               <div className="text-center mb-5">
-                <Link
-                  to="/shoplist"
-                  className="btn mx-auto dogshop"
-                >
+                <Link to="/shoplist" className="btn mx-auto dogshop">
                   逛逛狗狗雜貨店
                 </Link>
-                <Link
-                  to="/shoplist"
-                  className="btn mx-auto catshop"
-                >
+                <Link to="/shoplist" className="btn mx-auto catshop">
                   逛逛貓貓雜貨店
                 </Link>
               </div>

@@ -25,30 +25,20 @@ function Done(props) {
         <div className="mt-3">
           <div className="col-mb-12">
             <div className="card">
-              <div className="card-header text-center">
-                訂單成立
-              </div>
+              <div className="card-header text-center">訂單成立</div>
               <div className="card-body mx-auto">
                 <div className="list-unstyled">
                   <li>已收到您的訂單</li>
                   <li>訂單編號</li>
                   <li>商品預計於2021/09/05開始配送</li>
-                  <li>
-                    十分感謝您的訂購，敬請耐心等候商品到貨
-                  </li>
+                  <li>十分感謝您的訂購，敬請耐心等候商品到貨</li>
                 </div>
               </div>
               <div className="text-center mb-5">
-                <Link
-                  to="/MyOrder"
-                  className="btn mx-auto backtoshop"
-                >
+                <Link to="/MyOrder" className="btn mx-auto backtoshop">
                   前往我的訂單
                 </Link>
-                <Link
-                  to="/About"
-                  className="btn mx-auto backtotoppage"
-                >
+                <Link to="/About" className="btn mx-auto backtotoppage">
                   返回首頁
                 </Link>
               </div>

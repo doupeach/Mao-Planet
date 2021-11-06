@@ -19,31 +19,20 @@ function ConfirmPage(props) {
     setProducts(myCart)
   }, [])
   // 更新購物車中的商品數量
-  const updateCartToLocalStorage = (
-    item,
-    isAdded = true
-  ) => {
+  const updateCartToLocalStorage = (item, isAdded = true) => {
     console.log(item, isAdded)
-    const currentCart =
-      JSON.parse(localStorage.getItem('cart')) || []
+    const currentCart = JSON.parse(localStorage.getItem('cart')) || []
 
     // find if the product in the localstorage with its id
-    const index = currentCart.findIndex(
-      (v) => v.id === item.id
-    )
+    const index = currentCart.findIndex((v) => v.id === item.id)
 
     console.log('index', index)
     // found: index! == -1
     if (index > -1) {
-      isAdded
-        ? currentCart[index].amount++
-        : currentCart[index].amount--
+      isAdded ? currentCart[index].amount++ : currentCart[index].amount--
     }
 
-    localStorage.setItem(
-      'cart',
-      JSON.stringify(currentCart)
-    )
+    localStorage.setItem('cart', JSON.stringify(currentCart))
 
     // 設定資料
     setMycart(currentCart)
@@ -77,9 +66,7 @@ function ConfirmPage(props) {
                 <div className="progressnum2">2</div>
               </div>
               <div>
-                <div className="progresstitle2">
-                  填寫資料
-                </div>
+                <div className="progresstitle2">填寫資料</div>
               </div>
             </div>
           </div>
@@ -89,9 +76,7 @@ function ConfirmPage(props) {
                 <div className="progressnum3">3</div>
               </div>
               <div>
-                <div className="progresstitle3">
-                  資料確認
-                </div>
+                <div className="progresstitle3">資料確認</div>
               </div>
             </div>
           </div>
@@ -100,10 +85,7 @@ function ConfirmPage(props) {
         <div className="row py-5 ProductConfirmArea">
           <div className="col-md-12">
             <div className="card">
-              <div
-                className="card-header text-center"
-                id="headingOne"
-              >
+              <div className="card-header text-center" id="headingOne">
                 <button className="btn btn-link">
                   顯示購物車細節
                   <br />
@@ -118,16 +100,10 @@ function ConfirmPage(props) {
                     <th className="text-left">商品名稱</th>
                     <th className="text-center">優惠</th>
                     <th width="80px">單件價格</th>
-                    <th
-                      width="100px"
-                      className="text-center"
-                    >
+                    <th width="100px" className="text-center">
                       數量
                     </th>
-                    <th
-                      width="80px"
-                      className="text-center"
-                    >
+                    <th width="80px" className="text-center">
                       小計
                     </th>
                     <th width="30px"></th>
@@ -143,36 +119,25 @@ function ConfirmPage(props) {
                         />
                         <h5>
                           {products.map((v, i) => {
-                            return (
-                              <div key={i}>{v.name}</div>
-                            )
+                            return <div key={i}>{v.name}</div>
                           })}
                         </h5>
                       </td>
                       <td className="align-middle"></td>
                       <td className="align-middle">
                         {products.map((v, i) => {
-                          return (
-                            <div key={i}>{v.price}</div>
-                          )
+                          return <div key={i}>{v.price}</div>
                         })}
                       </td>
                       <td className="align-middle">
                         <ul className=" row list-group px-0">
                           {products.map((item, index) => {
                             return (
-                              <li
-                                className="list-group-item"
-                                key={item.id}
-                              >
+                              <li className="list-group-item" key={item.id}>
                                 <button
                                   onClick={() => {
-                                    if (item.amount === 1)
-                                      return
-                                    updateCartToLocalStorage(
-                                      item,
-                                      false
-                                    )
+                                    if (item.amount === 1) return
+                                    updateCartToLocalStorage(item, false)
                                   }}
                                 >
                                   -
@@ -180,10 +145,7 @@ function ConfirmPage(props) {
                                 {item.amount}
                                 <button
                                   onClick={() =>
-                                    updateCartToLocalStorage(
-                                      item,
-                                      true
-                                    )
+                                    updateCartToLocalStorage(item, true)
                                   }
                                 >
                                   +
@@ -196,9 +158,7 @@ function ConfirmPage(props) {
                       <td className="align-middle">
                         {products.map((item, index) => {
                           return (
-                            <div key={item.id}>
-                              {item.price * item.amount}
-                            </div>
+                            <div key={item.id}>{item.price * item.amount}</div>
                           )
                         })}
                       </td>
@@ -207,10 +167,7 @@ function ConfirmPage(props) {
                       </td>
                     </tr>
                     <tr>
-                      <td
-                        colspan="4"
-                        className="text-right"
-                      >
+                      <td colspan="4" className="text-right">
                         運費
                       </td>
                       <td className="align-middle text-right">
@@ -218,10 +175,7 @@ function ConfirmPage(props) {
                       </td>
                     </tr>
                     <tr>
-                      <td
-                        colspan="4"
-                        className="text-right"
-                      >
+                      <td colspan="4" className="text-right">
                         合計
                       </td>
                       <td className="align-middle text-right">
@@ -239,10 +193,7 @@ function ConfirmPage(props) {
           <div class="card col-md-5 px-0">
             <div class="card-header">顧客資料</div>
             <div class="card-body">
-              <form
-                class="needs-validation mt-3"
-                novalidate
-              >
+              <form class="needs-validation mt-3" novalidate>
                 <div class="form">
                   <div class="form-group">
                     <label for="name">顧客姓名</label>
@@ -253,9 +204,7 @@ function ConfirmPage(props) {
                       placeholder="顧客姓名"
                       required
                     />
-                    <div class="invalid-feedback">
-                      請輸入姓名
-                    </div>
+                    <div class="invalid-feedback">請輸入姓名</div>
                   </div>
                   <div class="form-group">
                     <label for="inputEmail">電子郵件</label>
@@ -266,9 +215,7 @@ function ConfirmPage(props) {
                       placeholder="Email"
                       required
                     />
-                    <div class="invalid-feedback">
-                      請輸入信箱
-                    </div>
+                    <div class="invalid-feedback">請輸入信箱</div>
                   </div>
                   <div class="form-group">
                     <label for="inputEmail">電話號碼</label>
@@ -279,9 +226,7 @@ function ConfirmPage(props) {
                       placeholder="phone"
                       required
                     />
-                    <div class="invalid-feedback">
-                      請輸入電話號碼
-                    </div>
+                    <div class="invalid-feedback">請輸入電話號碼</div>
                   </div>
                   <div class="form-check form-check-inline">
                     <input
@@ -290,10 +235,7 @@ function ConfirmPage(props) {
                       id="inlineCheckbox1"
                       value="option1"
                     />
-                    <label
-                      class="form-check-label"
-                      for="inlineCheckbox1"
-                    >
+                    <label class="form-check-label" for="inlineCheckbox1">
                       使用已存會員資料
                     </label>
                   </div>
@@ -314,10 +256,7 @@ function ConfirmPage(props) {
               <div class="">送貨資訊</div>
             </div>
             <div class="card-body">
-              <form
-                class="needs-validation mt-3"
-                novalidate
-              >
+              <form class="needs-validation mt-3" novalidate>
                 <div class="form">
                   <div>
                     <div>已選擇的送貨方式: 宅配</div>
@@ -328,10 +267,7 @@ function ConfirmPage(props) {
                         id="inlineCheckbox1"
                         value="option1"
                       />
-                      <label
-                        class="form-check-label"
-                        for="inlineCheckbox1"
-                      >
+                      <label class="form-check-label" for="inlineCheckbox1">
                         使用已存會員資料
                       </label>
                     </div>
@@ -345,9 +281,7 @@ function ConfirmPage(props) {
                       placeholder="姓名"
                       required
                     />
-                    <div class="invalid-feedback">
-                      請輸入姓名
-                    </div>
+                    <div class="invalid-feedback">請輸入姓名</div>
                   </div>
                   <div class="form-group col-md">
                     <label for="inputEmail">Email</label>
@@ -358,9 +292,7 @@ function ConfirmPage(props) {
                       placeholder="Email"
                       required
                     />
-                    <div class="invalid-feedback">
-                      請輸入信箱
-                    </div>
+                    <div class="invalid-feedback">請輸入信箱</div>
                   </div>
                 </div>
                 <div class="form">
@@ -372,9 +304,7 @@ function ConfirmPage(props) {
                       id="inputCity"
                       required
                     />
-                    <div class="invalid-feedback">
-                      請輸入寄送地址
-                    </div>
+                    <div class="invalid-feedback">請輸入寄送地址</div>
                   </div>
                 </div>
               </form>
@@ -385,9 +315,7 @@ function ConfirmPage(props) {
         <div class="card mt-3 CreditcardInputArea">
           <div class="card-header">
             <div class="">
-              <h5 class="card-title text-center">
-                信用卡資料
-              </h5>
+              <h5 class="card-title text-center">信用卡資料</h5>
             </div>
           </div>
           <div class="mt-3">
@@ -403,11 +331,7 @@ function ConfirmPage(props) {
                 </div>
                 <div class="col">
                   <h6>卡號</h6>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="卡號"
-                  />
+                  <input type="text" class="form-control" placeholder="卡號" />
                 </div>
               </div>
               <div class="form-row mt-3 input-group">
@@ -440,10 +364,7 @@ function ConfirmPage(props) {
                   id="inlineCheckbox1"
                   value="option1"
                 />
-                <label
-                  class="form-check-label"
-                  for="inlineCheckbox1"
-                >
+                <label class="form-check-label" for="inlineCheckbox1">
                   我同意網站服務條款及隱私政策
                 </label>
               </div>
@@ -469,8 +390,7 @@ function ConfirmPage(props) {
                 ※ 訂單相關進度及售後等問題 可加入 FB:
                 MaoPlanet，客服人員將於服務時間內盡快依序回覆，客服人員將於服務時間內盡快依序回覆。在線回覆時間：週一至週五
                 (10:30~18:00)，例假日暫停出貨及客服
-                <br />※
-                如商品有缺貨或停產等訂單無法出貨之情況，
+                <br />※ 如商品有缺貨或停產等訂單無法出貨之情況，
                 我們將使用Email進行通知，請務必留意相關訊息，謝謝您，祝您購物愉快！
               </h6>
             </form>
