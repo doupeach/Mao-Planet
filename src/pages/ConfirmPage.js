@@ -3,7 +3,7 @@ import CloseButton from 'react-bootstrap/CloseButton'
 import { withRouter, Link } from 'react-router-dom'
 
 // import ProductAccordion from '../components/ProductAccordion'
-import '../Styles/ConfirmPage.scss'
+import '../Styles/ConfirmPage.css'
 
 function ConfirmPage(props) {
   // 加入購物車的產品

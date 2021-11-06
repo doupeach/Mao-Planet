@@ -1,7 +1,6 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import '../Styles/Done.scss'
-
+import '../Styles/Done.css'
 
 function Done(props) {
   // const { auth } = props

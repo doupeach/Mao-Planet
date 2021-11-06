@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
-import '../Styles/FailPage.scss'
+import '../Styles/FailPage.css'
 
 function FailPage(props) {
   const { auth } = props
