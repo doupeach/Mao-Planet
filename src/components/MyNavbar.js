@@ -1,6 +1,8 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+
 import { BiSearch, BiUser, BiHeart, BiHomeAlt, BiCartAlt } from 'react-icons/bi'
+import Avatar from './Avatar'
 import logo from '../images/logo.svg'
 import '../Styles/MyNavbar.scss'
 
@@ -8,7 +10,7 @@ import '../Styles/MyNavbar.scss'
 import { NavLink } from 'react-router-dom'
 
 function MyNavbar(props) {
-  // const { auth } = props
+  const { auth } = props
   return (
     <>
       <div className="topYellow">
@@ -65,6 +67,7 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/bloglist" className="navtext mr-md-3">
               鏟屎官大補帖
             </Nav.Link>
+
             <Nav.Link
               as={NavLink}
               to="/login"
@@ -79,15 +82,102 @@ function MyNavbar(props) {
             >
               新用戶註冊
             </Nav.Link>
+            <NavDropdown
+              title="購物群組(暫時)"
+              id="collasible-nav-dropdown"
+              className="navtext mr-md-2"
+            >
+              <NavDropdown.Item as={NavLink} to="/done" className="navtext">
+                完成畫面
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/emptycart"
+                className="navtext"
+              >
+                空購物車
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/done" className="navtext">
+                我的訂單
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/myorder" className="navtext">
+                訂單明細
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/orderdetail"
+                className="navtext"
+              >
+                商品頁
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/shoppingcart"
+                className="navtext"
+              >
+                購物車
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/confirmpage"
+                className="navtext"
+              >
+                購物車II
+              </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/cart" className="navtext">
+                購物車III
+              </NavDropdown.Item>
+            </NavDropdown>
+
+            {auth && (
+              <Nav.Link
+                as={NavLink}
+                to="/admin"
+                className="navtext d-flex d-block d-md-none"
+              >
+                會員專區
+              </Nav.Link>
+            )}
+            {!auth && (
+              <Nav.Link
+                as={NavLink}
+                to="/login"
+                className="navtext d-flex d-block d-md-none"
+              >
+                會員登入
+              </Nav.Link>
+            )}
+            {!auth && (
+              <Nav.Link
+                as={NavLink}
+                to="/signup"
+                className="navtext d-flex d-block d-md-none"
+              >
+                新用戶註冊
+              </Nav.Link>
+            )}
           </Nav>
 
           <Nav className="mb-4 d-flex d-none d-md-row-block px-md-2">
             <Nav.Link href="#/" className="navicon">
               <BiSearch />
             </Nav.Link>
+
             <Nav.Link as={NavLink} to="/member" className="navicon">
               <BiUser />
             </Nav.Link>
+
+            {!auth && (
+              <Nav.Link as={NavLink} to="/login" className="navicon">
+                <BiUser />
+              </Nav.Link>
+            )}
+            {auth && (
+              <Nav.Link as={NavLink} to="/admin" className="navicon">
+                <Avatar />
+              </Nav.Link>
+            )}
+
             <Nav.Link href="#/" className="navicon">
               <BiHeart />
             </Nav.Link>
