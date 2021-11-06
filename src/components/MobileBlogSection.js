@@ -14,8 +14,8 @@ import {
   MDBBtn,
 } from 'mdbreact'
 
-import BlogPic1 from '../images/BlogPic1_250x250.jpg'
-import BlogPic2 from '../images/BlogPic2_250x250.jpg'
+import BlogPic1 from '../images/Home/BlogPic1_250x250.jpg'
+import BlogPic2 from '../images/Home/BlogPic2_250x250.jpg'
 import '../Styles/BlogSection.scss'
 
 const MobileBlogSection = () => {
